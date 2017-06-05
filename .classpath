@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/ssinghal/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-all/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-all-1.10.19-sources.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/ssinghal/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.9.4/11183bfb201124d5430b4071c7b88e7668882f2f/testng-6.9.4.jar" sourcepath="C:/Users/ssinghal/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.9.4/b10b3b9fb18d4e5702fdc2edc94a21bbb8f183cf/testng-6.9.4-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

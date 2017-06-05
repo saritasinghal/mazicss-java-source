@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="java-src">
+
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+
+	<property name="target" value="1.8" />
+	<property name="source" value="1.8" />
+
+	<path id="java-source.classpath">
+		<pathelement location="bin" />
+		<fileset dir="lib/">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<path id="javaxmail-src.classpath">
+		<pathelement location="bin" />
+		<fileset dir="lib/">
+			<include name="**/*.jar" />
+			<exclude name="geronimo-javamail_1.4_spec-1.2-sources.jar" />
+		</fileset>
+	</path>
+		<path id="javageronemo-src.classpath">
+		<pathelement location="bin" />
+		<fileset dir="lib/">
+			<include name="**/*.jar" />
+			<exclude name="javax.mail.jar" />
+		</fileset>
+	</path>
+
+	<target name="init" depends="cleanall">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<echo message="==========================================================" />
+		<echo message="CLEAN" />
+		<echo message="==========================================================" />
+		<delete dir="bin" />
+	</target>
+
+	<target depends="clean" name="cleanall" />
+	<target depends="build-project" name="build" />
+
+	<target depends="init" name="build-project">
+		<echo message="==========================================================" />
+		<echo message="Project[${ant.project.name}] Build file: ${ant.file}" />
+		<echo message="Using Java version ${ant.java.version}." />
+		<echo message="==========================================================" />
+		<echo message="==========================================================" />
+		<echo message="COMPILE" />
+		<echo message="==========================================================" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="java-source.classpath" />
+		</javac>
+		<echo message="==========================================================" />
+		<echo message="CONFIG" />
+		<echo message="==========================================================" />
+		<copy file="conf/mazicssJava-version.txt" tofile="bin/mazicssJava-version.txt" overwrite="true" />
+		<copy file="conf/mazicssJava-log4j.properties" tofile="bin/mazicssJava-log4j.properties" overwrite="true" />
+		<echo message=
+		"==========================================================" />
+		<echo message="JAR" />
+		<echo message="==========================================================" />
+		<jar destfile="mazicssJava.jar" basedir="bin" />
+	</target>
+
+	
+	<target name="ProdCon">
+        <java classname="com.mazicss.learn.ProdCon" failonerror="true" fork="yes">
+            <classpath refid="java-source.classpath"/>
+        </java>
+    </target>
+
+
+
+</project>
