@@ -9,7 +9,14 @@ package com.mazicss.mockito;
  */
 public class PrivateMethodClass {
 	
-
+  String name ;
+  int id ;
+  
+  
+  public int getID()
+  {
+	  return 1;
+  }
 	
 	private boolean testClass1()
 	{

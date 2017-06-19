@@ -26,28 +26,15 @@ public class TestPrivateMethodClass {
 	}
 	
   @Test
-  public void f() {
-	  try {
-		
+  public void f() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	
 		  Method privateMethod;
 			privateMethod = PrivateMethodClass.class.getDeclaredMethod("testClass1", null);
 			privateMethod.setAccessible(true);
 			boolean returnValue = (boolean) privateMethod.invoke(pvr, null);
 			System.out.println("returnValue = " + returnValue);
 		
-	  } catch (NoSuchMethodException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	 
 	  
  }
 	  
