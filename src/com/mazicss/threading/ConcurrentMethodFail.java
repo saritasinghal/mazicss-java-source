@@ -26,7 +26,7 @@ public class ConcurrentMethodFail {
   public static void main(String[] arge)
   {
     
-    ConcurrentMethodFail fc = new ConcurrentMethodFail();
+    final ConcurrentMethodFail fc = new ConcurrentMethodFail();
     
   while(true)
     {

@@ -24,7 +24,7 @@ public class ConcurrentMethodPass {
   public static void main(String[] args)
   {
     
-    ConcurrentMethodPass pc = new ConcurrentMethodPass();
+    final ConcurrentMethodPass pc = new ConcurrentMethodPass();
     for (int j=0; j<1000; j++)
     {
     
